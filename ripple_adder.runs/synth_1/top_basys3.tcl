@@ -71,7 +71,11 @@ set_property ip_output_repo c:/Users/C28Reva.Kalbhor/ece281/ice3/ece281-ice3/rip
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib C:/Users/C28Reva.Kalbhor/ece281/ice3/ece281-ice3/src/top_basys3.vhd
+read_vhdl -library xil_defaultlib {
+  C:/Users/C28Reva.Kalbhor/ece281/ice3/ece281-ice3/src/full_adder.vhd
+  C:/Users/C28Reva.Kalbhor/ece281/ice3/ece281-ice3/src/ripple_adder.vhd
+  C:/Users/C28Reva.Kalbhor/ece281/ice3/ece281-ice3/src/top_basys3.vhd
+}
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
 # stitched into the results of this synthesis run. Any black boxes in the
@@ -85,6 +89,8 @@ read_xdc C:/Users/C28Reva.Kalbhor/ece281/ice3/ece281-ice3/src/Basys3_Master.xdc
 set_property used_in_implementation false [get_files C:/Users/C28Reva.Kalbhor/ece281/ice3/ece281-ice3/src/Basys3_Master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
+
+read_checkpoint -auto_incremental -incremental C:/Users/C28Reva.Kalbhor/ece281/ice3/ece281-ice3/ripple_adder.srcs/utils_1/imports/synth_1/top_basys3.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

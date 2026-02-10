@@ -23,8 +23,6 @@ Finally, the workflow **runs** the simulation. If successful then it will quietl
 If any of the `assert` statements fail then GHDL will cease the simulation and exit with non-zero code; this will also cause the workflow to fail.
 Assert statements of other severity levels will be reported, but not fail the workflow.
 
-## Documentation
-
 Below is the simulation waveform for the 4-bit ripple-carry adder.
 
 ![Ripple adder waveform](ripple_adder_waveform.png)
@@ -32,4 +30,8 @@ Below is the simulation waveform for the 4-bit ripple-carry adder.
 Below is the sketch of the top_basys3 entity showing how switches and LEDs connect to the ripple adder.
 
 ![Top Basys3 sketch](top_basys3_sketch.jpg)
+
+## Documentation
+
+I used my father's help to help me understand what the entire ICE 3 instructions were asking me to do.
 
